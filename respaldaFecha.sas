@@ -1,4 +1,4 @@
-%macro respaldaFecha (intableName, _inLib, _outLib);
+%macro respaldaFecha (intableName, outtableName, _inLib, _outLib);
 
 	%let rundt = '';
 
@@ -7,8 +7,8 @@
 		call symput("rundt",tempdate);
 	run;
 
-	%let table_name = &_outLib..&intableName._&rundt;
-    %put ** Se creara tabla	 &table_name;
+	%let table_name = &_outLib..&outtableName._&rundt;
+        %put ** Se creara tabla	 &table_name;
 
 	data &table_name;
 	  set &_inLib..&intableName.;
