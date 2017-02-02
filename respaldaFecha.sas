@@ -7,7 +7,7 @@
 		call symput("rundt",tempdate);
 	run;
 
-	%let table_name = &_outLib.&intableName._&rundt;
+	%let table_name = &_outLib..&intableName._&rundt;
     %put ** Se creara tabla	 &table_name;
 
 	data &table_name;
